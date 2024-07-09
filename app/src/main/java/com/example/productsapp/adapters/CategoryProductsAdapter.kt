@@ -28,9 +28,9 @@ class CategoryProductsAdapter (private var dataSet: List<Category> = emptyList()
         fun render(category: Category, onClickListener: (Category) -> Unit) {
             binding.categoryName.text = category.name
 
-            //binding.cardItemSuperHero.setOnClickListener {
-            //    onClickListener(category)
-            //}
+            binding.cardCategory.setOnClickListener {
+                onClickListener(category)
+            }
         }
     }
 }

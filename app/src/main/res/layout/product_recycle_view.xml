@@ -8,12 +8,12 @@
     android:layout_margin="10dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardCategory"
+        android:id="@+id/cardProduct"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/blue"
+        app:cardBackgroundColor="@color/red"
         android:layout_margin="10dp"
         android:gravity="center">
 
@@ -31,7 +31,7 @@
                 android:layout_gravity="center"/>
 
             <TextView
-                android:id="@+id/categoryName"
+                android:id="@+id/productName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title"
