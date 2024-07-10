@@ -14,10 +14,4 @@
             android:icon="@drawable/baseline_share_24"
             app:showAsAction="always"
              />
-    <item
-        android:id="@+id/menu_save"
-        android:title="Save"
-        android:icon="@drawable/baseline_save_24"
-        app:showAsAction="always"
-         />
     </menu>

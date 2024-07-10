@@ -71,15 +71,16 @@ class ApiServicesImplementation {
                     Log.i("HTTP", "${response.code()}")
                     Handler(Looper.getMainLooper()).post {
                         //Code that runs in main
+                        val product = response.body()
                         if (response.isSuccessful) {
-                            val product = response.body()
                             if (product != null) {
-                                Log.d("MainActivity", "Category: ${product.name}")
+                                product.url = response.raw().request().url().toString()
+                                Log.d("MainActivity", "Category: ${product.name} -> ${response.raw().request().url()}")
                             }
                         } else {
                             Log.e("MainActivity", "Request failed with code: ${response.code()}")
                         }
-                        implementLayout(response.body()!!)
+                        implementLayout(product!!)
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()

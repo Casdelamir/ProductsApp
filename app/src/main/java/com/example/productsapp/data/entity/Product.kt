@@ -7,6 +7,7 @@ class Product(
     @SerializedName("title") val name: String,
     @SerializedName("description") val description: String,
     @SerializedName("price") val price: Double,
-    @SerializedName("brand") val brand: String
+    @SerializedName("brand") val brand: String?,
+    var url: String?
 ) {
 }
