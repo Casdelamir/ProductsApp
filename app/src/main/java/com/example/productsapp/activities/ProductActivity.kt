@@ -1,11 +1,15 @@
 package com.example.productsapp.activities
 
+import android.app.usage.UsageEvents.Event
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.view.KeyEvent.KEYCODE_ENTER
 import android.view.Menu
 import android.view.MenuItem
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import com.example.productsapp.R
 import com.example.productsapp.data.entity.Product
@@ -48,12 +52,33 @@ class ProductActivity : AppCompatActivity() {
             }
 
         binding.addProductToCart.setOnClickListener(){
-            val existingProductInTheCart: Cart? = cartDAO.find(productId)
-            cartDAO.find(productId)
-            val quantity: Int = binding.textInputQuantity.text.toString().toInt()
-            val totalPrice = quantity * product.price
+            addToCardAction()
+        }
+
+        binding.textInputQuantity.setOnEditorActionListener() { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                addToCardAction()
+                true
+            } else {
+                false
+            }
+        }
+    }
+
+    fun addToCardAction() {
+        val existingProductInTheCart: Cart? = cartDAO.find(productId)
+
+        val quantity: Int = binding.textInputQuantity.text.toString().toInt()
+        val totalPrice = quantity * product.price
+
+        if (existingProductInTheCart == null) {
             val cart = Cart(-1, productId, quantity, totalPrice)
             cartDAO.insert(cart)
+            Toast.makeText(this, "Product is added to card", Toast.LENGTH_SHORT).show()
+        }else {
+            existingProductInTheCart.quantity += quantity
+            existingProductInTheCart.totalPrice += totalPrice
+            cartDAO.update(existingProductInTheCart)
             Toast.makeText(this, "Product is added to card", Toast.LENGTH_SHORT).show()
         }
     }

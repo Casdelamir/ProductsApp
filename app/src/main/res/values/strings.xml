@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ProductsApp</string>
+    <string name="product_name">Product name: %1$s</string>
+    <string name="quantity">Quantity: %1$s</string>
+    <string name="total_price">Total price fot this product: %1$s</string>
 
 </resources>
