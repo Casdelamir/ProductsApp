@@ -3,7 +3,7 @@ package com.example.productsapp.data.sqlite
 
 import android.provider.BaseColumns
 
-data class Cart(var id: Int, var product: Int, var quantity: Int, var totalPrice: Double) {
+data class Cart(var id: Int, var productId: Int, var quantity: Int, var totalPrice: Double) {
 
     companion object {
         const val TABLE_NAME = "Cart"

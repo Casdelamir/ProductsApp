@@ -10,7 +10,9 @@ import android.view.KeyEvent.KEYCODE_ENTER
 import android.view.Menu
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.productsapp.R
 import com.example.productsapp.data.entity.Product
 import com.example.productsapp.data.services.ApiServicesImplementation
@@ -58,6 +60,9 @@ class ProductActivity : AppCompatActivity() {
         binding.textInputQuantity.setOnEditorActionListener() { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 addToCardAction()
+                //This is hiding the keyboard when enter is pressed
+                val imm = ContextCompat.getSystemService(this, InputMethodManager::class.java)
+                imm?.hideSoftInputFromWindow(binding.textInputQuantity.windowToken, 0)
                 true
             } else {
                 false

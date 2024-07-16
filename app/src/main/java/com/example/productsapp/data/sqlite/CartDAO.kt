@@ -18,7 +18,7 @@ class CartDAO(val context: Context) {
         val db = databaseManager.writableDatabase
 
         val values = ContentValues()
-        values.put(Cart.COLUMN_NAME_PRODUCT, cart.product)
+        values.put(Cart.COLUMN_NAME_PRODUCT, cart.productId)
         values.put(Cart.COLUMN_NAME_QUANTITY, cart.quantity)
         values.put(Cart.COLUMN_NAME_PRICE, cart.totalPrice)
 
@@ -30,7 +30,7 @@ class CartDAO(val context: Context) {
         val db = databaseManager.writableDatabase
 
         val values = ContentValues()
-        values.put(Cart.COLUMN_NAME_PRODUCT, cart.product)
+        values.put(Cart.COLUMN_NAME_PRODUCT, cart.productId)
         values.put(Cart.COLUMN_NAME_QUANTITY, cart.quantity)
         values.put(Cart.COLUMN_NAME_PRICE, cart.totalPrice)
 
@@ -87,7 +87,7 @@ class CartDAO(val context: Context) {
             null,                         // The values for the WHERE clause
             null,                            // don't group the rows
             null,                             // don't filter by row groups
-            "$COLUMN_NAME_PRICE ASC"         // The sort order
+            null       // The sort order
         )
 
         var carts = mutableListOf<Cart>()

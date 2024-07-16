@@ -18,12 +18,32 @@
             android:layout_height="wrap_content"
             android:text="@string/product_name"
             android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
         <TextView
             android:id="@+id/quantityProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/quantity"
-            android:layout_weight="1"/>
+            android:text="@string/quantity" />
+        <TextView
+            android:id="@+id/quantityProductValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity_value"
+            android:layout_marginStart="10dp"/>
+            <EditText
+                android:id="@+id/editQuantityValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity_value"
+                android:inputType="number"
+                android:textSize="15sp"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
         <TextView
             android:id="@+id/totalPriceProduct"
             android:layout_width="wrap_content"
@@ -35,17 +55,26 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/edit_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/baseline_edit_24"
                 android:padding="16dp"
                 android:layout_marginEnd="16dp"/>
         <Button
+            android:id="@+id/delete_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/baseline_delete_24"
             android:padding="16dp"
             android:layout_marginEnd="16dp"/>
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/baseline_save_24"
+                android:padding="16dp"
+                android:layout_marginEnd="16dp"/>
         </LinearLayout>
     </LinearLayout>
 
