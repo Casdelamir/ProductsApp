@@ -1,13 +1,36 @@
-# ProductsApp
-E-commercial app
-##Main page:
-In the main page of the app appears a list of categoris. The user cans select a category and list of products is displayed or select the cart icon in the action bar menu and cart with list of all added products is displayed.
-##On select category:
-    List of the products contained in the selected category is displayed. In the actoin bar menu user can click on the get favorite product an only the favorite product is displayed if there is a favorite product in that category or toas message is dispalyed if ther is no favorite product in that category.
-##On select product:
-    Details of the product is diaplyed: Brand or name of the product, description of the product, and the price of the product. User can enter quantity and add the product to the cart clicking the add to card button or pressing the enter button of the kayboard.
-##On click on the cart button of the main page:
-    List of added products is displayed in nested scroll view. User can edit (edit button) the quantity of each product and the price is automaticaly updaited. After editing the quantity user have to save (save button) the edited product. Each product can be deleted (delete button). After the product is saved or deleted the total price of the cart is updaited automaticaly.
-##TO DO:
+# ProductsApp - E-commerce Android Prototipe
+
+A functional e-commerce style Android app build in Kotlin. Users cn browse categories, view products, add to cartwith quantity control, edit/delete items, mark favorites, adn see real time total price updates.
+
+## Features
+- Home screen with category list
+- Product list per category + favorite filter (with toast feedback if no favorites)
+- Product detail screen with add to cart button and quantity selector
+- Cart screen: nested list of items, edit quantity (auto price recalculation), save delete, total display
+- Action bar cart icon navigation
+- Basic user feedback via toast
+
+## Tech Stack
+- **Languadge**: Kotlin
+- **UI**: XML layouts + Views (Activity/Fragment based)
+- **Arcitecture**: Basic separation of concepts (activities handle logic)
+- **Other**: ActionBar menu, NestedScrollView, in-memory data
+
+  This project demostrates practical app flowslike cart managment (Recycle views) and dinamic pricing.
+
+## Screenshots
+
+<p float="left">
+    <img src="screenshots/home_categories.png" width="200" />
+    <img src="screenshots/home_categories.png" width="200" />
+    <img src="screenshots/home_categories.png" width="200" />
+</p>
+
+## Setup
+1. Clone repo
+2. Open in Android Studio
+3. Sync Gradle -> Run on emulator/device(min SDK 21)
+
+## TO DO:
  Implement oredr products button.
  Add dialog to the app: https://medium.com/@manuchekhrdev/android-show-simple-alert-dialog-in-kotlin-f7e232ec949e
